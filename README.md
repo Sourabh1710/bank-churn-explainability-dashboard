@@ -9,7 +9,7 @@
 > **Can we identify which customers will leave before they do?**  
 > An end-to-end ML system that flags at-risk bank customers with 87% AUC-ROC — and explains *why* each customer is flagged, down to the individual level.
 
-[Live Demo →](#) &nbsp;|&nbsp; [Key Findings ↓](#-what-the-model-found)
+[Live Demo →](https://sourabhsonker-bank-churn-predictor.streamlit.app/) &nbsp;|&nbsp; [Key Findings ↓](#-what-the-model-found)
 
 ---
 
