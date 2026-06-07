@@ -21,6 +21,9 @@ The challenge: churn signals are weak and mixed. A customer with a high balance,
 
 This project builds a production-style churn prediction pipeline that a retention team could act on directly.
 
+![EDA Overview](outputs/plots/01_eda_overview.png)
+*Churn rate by geography, gender, age, balance, and product holdings. Germany stands out immediately; the age 41–60 signal is visible in the histogram overlap.*
+
 ---
 
 ## Results
@@ -35,6 +38,9 @@ This project builds a production-style churn prediction pipeline that a retentio
 Tuning XGBoost via Optuna (50 Bayesian trials) improved AUC by **+3.6 points** over the untuned baseline. Random Forest was tuned via GridSearchCV across 24 hyperparameter combinations.
 
 > **On the precision-recall tradeoff:** XGBoost at default threshold (0.5) is conservative — high precision, lower recall. For a retention campaign where outreach cost is low, lowering the threshold to 0.35 recovers ~15% more true churners with an acceptable rise in false positives. The Streamlit app lets you dial this live.
+
+![ROC and PR Curves](outputs/plots/03_roc_pr_curves.png)
+*Left: ROC curves for all three models. Right: Precision-Recall curves — more informative than ROC when classes are imbalanced. XGBoost dominates on both.*
 
 ---
 
@@ -53,6 +59,12 @@ SHAP values quantify each feature's contribution to every individual prediction.
 **5. Gender: Female (SHAP = 0.16)** — female customers show a moderately higher churn tendency, possibly correlated with Germany geography (intersection worth a follow-up deep-dive).
 
 **Business recommendation:** The highest-ROI retention target is an *inactive, 45–55-year-old, single-product, high-balance* customer in Germany. They combine all five risk signals. A personal advisor outreach + product upgrade offer directed at this segment would yield the highest conversion from retention spend.
+
+![SHAP Feature Importance](outputs/plots/05_shap_importance.png)
+*Mean absolute SHAP values across the test set. Age and NumOfProducts dominate — the model leans heavily on these two signals.*
+
+![SHAP Summary Plot](outputs/plots/06_shap_summary.png)
+*Beeswarm plot showing direction: each dot is one customer. Red = high feature value, blue = low. Older age (red) pushes right → increases churn. Active membership (red = is active) pushes left → decreases churn.*
 
 ---
 
