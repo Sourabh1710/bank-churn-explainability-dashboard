@@ -1,6 +1,6 @@
 # Bank Customer Churn Prediction
 
-![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)
 ![XGBoost](https://img.shields.io/badge/XGBoost-2.0-FF6600?style=flat)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=flat&logo=streamlit&logoColor=white)
 ![SHAP](https://img.shields.io/badge/SHAP-Explainability-00C0A3?style=flat)
@@ -9,7 +9,7 @@
 > **Can we identify which customers will leave before they do?**  
 > An end-to-end ML system that flags at-risk bank customers with 87% AUC-ROC — and explains *why* each customer is flagged, down to the individual level.
 
-[Live Demo →](https://sourabhsonker-bank-churn-predictor.streamlit.app/) &nbsp;|&nbsp; [Key Findings ↓](#-what-the-model-found)
+[Live Demo →](https://sourabhsonker-bank-churn-predictor.streamlit.app/) &nbsp;|&nbsp; [Key Findings ↓](#-What-the-Model-Found)
 
 ---
 
@@ -111,7 +111,7 @@ Four domain-driven features built on top of the raw columns:
 ## Quickstart
 
 ```bash
-git clone https://github.com/yourusername/bank-churn-prediction
+git clone https://github.com/Sourabh1710/bank-churn-explainability-dashboard
 cd bank-churn-prediction
 
 pip install -r requirements.txt
